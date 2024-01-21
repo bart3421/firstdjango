@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home page</title>
-</head>
-<body>
-    <h1>Приветствую!</h1>
+{% extends "base.html" %}
 
-    Меня зовут: <i>({name}).</i><br>
-    Мой email для связи: <i>({email})</i><br>
+{% load static %}
 
-    Это главная страница сайта
-    <i>Сайт пока в разработке...</i>
+{% block title %}
+    Home page
+{% endblock  %}
 
+{% block content %}
+    {% include "header.html" %}
     
-</body>
-</html>
+    <br><br><img width="50px" src={% static "django.svg" %} alt="My image">
+
+    <h1> Приветствую! </h1>
+
+    Меня зовут: <i>{{ name }}.</i><br>
+    Мой email для связи: <i>{{ email }}</i><br>
+
+    Это главная страница сайта <br>
+    <i> Сайт пока в разработке... </i>
+
+{% endblock  %}
